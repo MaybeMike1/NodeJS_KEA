@@ -69,7 +69,7 @@ console.log(diet);
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
 dinnerTray = diet.copyWithin(0, diet.length);
-console.log("DinnerTray " + dinnerTray)
+console.log("DinnerTray " + dinnerTray);
 
 // --------------------------------------
 // Exercise 7 - For loop
@@ -79,7 +79,7 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 // log every second char in the array starting from b
 
 for(let k = 1; k < lettersExpanded.length; k++) {
-    console.log(lettersExpanded[k])
+    console.log(lettersExpanded[k]);
 }
 
 // --------------------------------------
@@ -92,15 +92,16 @@ const discardedNumbers = [];
 
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
+
 for(let l= 0; l < numbers.length;l++){
     if(numbers[l] > 6 ){
-        console.log("Element at index: " +"["+ l + "]" + " = "  + numbers[l])
+        console.log("Element at index: " +"["+ l + "]" + " = "  + numbers[l]);
     }
      else if(numbers[l] < 0){
-        console.log("Element at index: " +"["+ l + "]" + " = " + numbers[l])
+        console.log("Element at index: " +"["+ l + "]" + " = " + numbers[l]);
     } else
-    discardedNumbers.push(numbers[l])
+    discardedNumbers.push(numbers[l]);
 }
-console.log("Discarded Number below:")
-console.log(discardedNumbers)
+console.log("Discarded Number below:");
+console.log(discardedNumbers);
 // --------------------------------------
