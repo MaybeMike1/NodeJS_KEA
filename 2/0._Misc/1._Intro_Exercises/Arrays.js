@@ -89,18 +89,18 @@ const numbers  = [5, 3, 2, 7, 11, 12, 0, -20, 6];
 
 const discardedNumbers = [];
 
+
+// log the element if the number is above 6 or below 0
+// else push them to the array discardedNumbers
 for(let l= 0; l < numbers.length;l++){
     if(numbers[l] > 6 ){
-        console.log("Position in array " +"["+ l + "]" + " = "  + numbers[l])
+        console.log("Element at index: " +"["+ l + "]" + " = "  + numbers[l])
     }
-    if(numbers[l] < 0){
-        console.log(numbers[l])
+     else if(numbers[l] < 0){
+        console.log("Element at index: " +"["+ l + "]" + " = " + numbers[l])
     } else
     discardedNumbers.push(numbers[l])
 }
-
+console.log("Discarded Number below:")
 console.log(discardedNumbers)
-// log the element if the number is above 6 or below 0
-// else push them to the array discardedNumbers
-
 // --------------------------------------
