@@ -12,7 +12,7 @@ const lastName = "Latif";
 
 var fullName = firstName + ' ' + lastName;
 
-console.log(fullName);
+console.log('My first name is ' + firstName + ' and my last name is ' + lastName);
 
 // --------------------------------------
 // Exercise 2 - Numbers and Strings
