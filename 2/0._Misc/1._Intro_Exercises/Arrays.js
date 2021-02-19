@@ -24,7 +24,7 @@ const friends = [];
 
 friends[0] = {"name" :"Thomas", "age": 22};
 friends[1] = {"name" : "Carl", "age" : 35};
-friends[2] = {"name" :"Jamie", "age" : 30}
+friends[2] = {"name" :"Jamie", "age" : 30};
 
 console.log(friends)
 
@@ -48,7 +48,7 @@ const diet = ["tomato", "cucumber", "rocket"];
 // You are a programmer. In one line (one statement) insert hamburger, soda and pizza between the elements cucumber and rocket
 
 
-diet.splice(2,0,"hamburger", "soda", "pizza")
+diet.splice(2,0,"hamburger", "soda", "pizza");
 console.log(diet);
 
 
@@ -78,7 +78,7 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-for(let k = 1; k < lettersExpanded.length;k = k+2) {
+for (let k = 1; k < lettersExpanded.length; k = k+2) {
     console.log(lettersExpanded[k]);
 }
 
@@ -93,11 +93,11 @@ const discardedNumbers = [];
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
 
-for(let l= 0; l < numbers.length;l++){
-    if(numbers[l] > 6 ){
+for (let l= 0; l < numbers.length;l++){
+    if (numbers[l] > 6 ){
         console.log("Element at index: " +"["+ l + "]" + " = "  + numbers[l]);
     }
-     else if(numbers[l] < 0){
+     else if (numbers[l] < 0){
         console.log("Element at index: " +"["+ l + "]" + " = " + numbers[l]);
     } else
     discardedNumbers.push(numbers[l]);
