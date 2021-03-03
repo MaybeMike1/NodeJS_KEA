@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const expressPort = 8080;
 
 // A way to parse json without getting undefined json.
 app.use(express.json());
@@ -37,7 +38,7 @@ let users = [
 ]
 
 //Delete by id finished
-app.delete("/user/:id", (req, res) => {
+app.delete("/user/delete/:id", (req, res) => {
     const userId = req.params.id - 1;
     console.log(users[userId], " has been deleted")
     users.splice(userId, 1);
@@ -45,5 +46,7 @@ app.delete("/user/:id", (req, res) => {
     res.send({ users: users});
 });
 
-app.listen(8080);
+app.listen(expressPort, () => {
+    console.log(`server is running on port: ${expressPort}`)
+});
 
