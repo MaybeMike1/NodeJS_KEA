@@ -16,12 +16,20 @@ app.get("/users", (req, res) => {
     res.send(users);
 });
 
-app.post('/user', function (req, res) {
+app.post('/user',  (req, res) => {
     const id = 1;
-    console.log(id)
-    console.log("Post has been called, firstName = " + req.body.firstName);
-    res.send({body: req.body.id})
+    console.log(id);
+    users.push(req.body);
+    console.log("Post has been called, firstName = " + users[4][firstName]);
+    res.send({user: req.body})
   });
+
+app.put('/user/:id', (req,res) => {
+    const id = req.params.id - 1;
+    users[id] = req.body;
+    console.log(id);
+    res.send({user : req.body});
+}); 
 
 // Get by id has been finished.
 app.get("/user/:id", (req, res) => {
