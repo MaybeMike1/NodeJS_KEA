@@ -54,7 +54,10 @@ app.delete("/user/delete/:id", (req, res) => {
     res.send({ users: users});
 });
 
-app.listen(expressPort, () => {
+app.listen(expressPort, (error) => {
+    if(error) {
+        
+    } 
     console.log(`server is running on port: ${expressPort}`)
 });
 
