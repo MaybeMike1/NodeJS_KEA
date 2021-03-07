@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Express - Getting Started</title>
+</head>
+<body>
+    <h1>Express Documentation and Quizes</h1>
+
+    <table>
+        <tr>
+            <td><div id="totalCorrect"></div></td>
+        </tr>
+        <tr>
+            <td>Where do you specify your express lib?</td>
+            <td><input type="text", id="libAnswer"></td>
+            <td><button  id="submit", type="submit" class="btn btn-success">Submit</button></td>
+        </tr>
+        <th></th>
+        <th></th>
+
+    </table>
+    
+</body>
+<script>
+    let correctAnswers = 0;
+    $("#submit").click(function() {
+        if(document.getElementById("libAnswer").value === 'package.json') {
+            correctAnswers++;
+        }
+    });
+    $("#submit").click( function() {
+        $("#totalCorrect").append("<p>Total Correct:"+ correctAnswers +" </p>")
+    });
+    
+   
+</script>
+</html>
