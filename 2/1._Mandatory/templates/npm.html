@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .h1{
+            background-color: azure;
+            padding:10px;
+            margin-top: auto;
+        }
+        .textField{
+            position:absolute;
+            width: 50%;
+            height:auto;
+            font-size: 20px;
+            
+        }
+    </style>
+    <title>Node Package Manager</title>
+</head>
+<body>
+    <h1 class="h1">Node Package Manager - How to use it</h1>
+    <article class="textField">
+        <p>
+            Node Package Manager is what we use to install new packages to support or be used in our applications. It is therefore pretty essential
+            to understand. We use npm to install dependencies into our package.json file. For instance, if you want to install nodemon to your project, you would use
+            "npm install nodemon". There will be an update in the package.json file with the new dependency added as a key:value pair.
+        </p>
+        <p>
+            There are different flags, that can be used with npm. I will try to explain the essential once, that I have been using during this NodeJS course so far.
+            <li>
+                Global - when you want to install a dependencies globally. You want to add in a "-g" after npm command to specify that this dependency should be avaliable
+                in any project on my local machine. The syntax looks as following: "npm install -g nodemon", the -g again specifies that the package manager should install this package
+                globally.
+            </li>
+            <br>
+            <li>
+                Install - there is a shorthand for the install command for npm, that can save you a bit of time in rush hours. It is completely alright to use "install"..
+                But what if I told you, that you could discard all the letters in install and add a dash in front. That would work as good as install. The syntax for this is as followed:
+                "npm -i express". In this command I take -i instead of install to add express to my package.json.
+            </li>
+            <br>
+            <li>
+                devDependecy- This is another type of dependency, devDep is used to for developer purposes. You could use this to install test-enviroment or use to implement something to see
+                if it fits the project. Even though as I mentioned early the devDep is not the same as the dependencies in package.json. This is added in the developerDependency key in the json file.
+                It can still be used the package, that has been installed. But it won't be used in production. The syntax for this is as followed: "npm install --save-dev".
+            </li>
+        </p>
+        <a href="/">Back to home</a>
+    </article>
+    
+</body>
+</html>

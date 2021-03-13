@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
     
 })
+
+app.get("/pizza", (req, res) => {
+    res.sendFile(__dirname + "/public/pizza.html");
+});
 app.listen(8080, (error) => {
     if(error) {
         console.log(error)

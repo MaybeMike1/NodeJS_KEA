@@ -25,19 +25,31 @@
         <th></th>
 
     </table>
-    
+    <a href="/">Back to home</a>
 </body>
 <script>
-    let correctAnswers = 0;
-    $("#submit").click(function() {
+    /* let correctAnswers = 0; */
+    /* $("#submit").click(function() {
         if(document.getElementById("libAnswer").value === 'package.json') {
             correctAnswers++;
         }
-    });
+    }); */
+
+    correctAnswers = ["package.json", ""];
+    
     $("#submit").click( function() {
-        $("#totalCorrect").append("<p>Total Correct:"+ correctAnswers +" </p>")
+        $("#totalCorrect").prepend(correctAnswers);
     });
     
+
+    function checkAnswer(correctAnswers) {
+        correctAnswersArr = [];
+    for(let i = 0; i > correctAnswers.length; i++) {
+        if() {
+            
+        }
+    }   
+    }
    
 </script>
 </html>

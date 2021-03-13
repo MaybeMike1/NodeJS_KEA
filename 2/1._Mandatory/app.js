@@ -17,5 +17,17 @@ app.get('/', (req, res) => {
 
 app.get('/express', (req, res) => {
     res.sendFile(__dirname + '/templates/express.html');
-    console.log('Client entered index with status code:',res.statusCode, 'OK')
-})
+    console.log('Client entered index with status code:',res.statusCode, 'OK');
+});
+
+app.get('/callback-functions', (req, res) => {
+    res.sendFile(__dirname + '/templates/callback.html');
+});
+
+app.get('/npm', (req, res) => {
+    res.sendFile(__dirname + '/templates/npm.html');
+});
+
+app.get('/packagejson', (req,res) => {
+    res.sendFile(__dirname + '/templates/packageJSON.html');
+});
