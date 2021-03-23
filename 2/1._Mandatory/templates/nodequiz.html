@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>NodeJS - Quiz</title>
+</head>
+<body>
+    <h1>NodeJS Quiz</h1>
+    <h3></h3>
+
+    <div>
+        <p id="question"></p>
+        <input type="text" id="answer">
+        <button id="submit", class="btn-success", type="button">Submit Answer</button>
+        <button id="hint">Hint</button>
+    </div>
+</body>
+<script>
+    const correctAnswers = ['Package.json', 'ExpressJS', 'npm', 'npm install'];
+    const quizQuestions = 
+    ['Where is all dependencies stored?',
+     'What module is used for web applications?',
+      'What is the three letters that is used for node commands? ',
+      'What is the command for installation of dependencies in NodeJS?'];
+    const quizHints = 
+    [
+        'It is a json file, that contains certain information about the node project, that you are working on.',
+        'Test'
+    ];  
+    let result = 0;
+    
+    let hintCounter = 1;
+
+    let questionCounter = 1;
+    $("h3").html("Question "+ questionCounter+" of 10:");
+
+    $("#hint").click(function() {
+            console.log("clicked")
+            console.log(questionCounter + " " + hintCounter)
+        for(let i = 0; i < quizHints.length; i++){
+            if(questionCounter === hintCounter) {
+                console.log(quizHints[hintCounter]);
+            };
+        };    
+        });
+    
+    $("#submit").click( function() {
+        questionCounter++;
+        $("h3").html(" Question "+questionCounter+" of 10:");
+        console.log("Called from Submit Botton on question counter")
+        
+    });
+   
+        let currentQuestion = 0;
+        if(quizQuestions.length >= 4) {
+            let questionHTML = $("#question").html("<p>"+ quizQuestions[currentQuestion] +"</p>")
+            console.log(quizQuestions[currentQuestion])
+            /* getHint(quizHints, questionCounter); */
+            $("#submit").click( function() {
+                checkAnswer(correctAnswers, result);
+                nextQuestion(quizQuestions);
+                
+                 
+                
+            });
+        };
+    // Arrow Function takes an array of question as argument and gets next question from the array.
+    
+    nextQuestion = function(questionArr) {
+        currentQuestion++;
+            questionHTML = $("#question").html("<p>"+quizQuestions[currentQuestion]+"</p>");
+            console.log(document.getElementById('answer').value);
+            console.log("Called from Submit Botton on current question");
+    };
+    
+    function checkAnswer(correctAnswers, result) {
+       let submitAnswer = document.getElementById('answer').value;
+       console.log(submitAnswer + " " + correctAnswers[currentQuestion-1] )
+       console.log(submitAnswer === correctAnswers[currentQuestion-1])
+       if(submitAnswer === correctAnswers[currentQuestion-1]){
+        return result += 1;
+        console.log("I'm here");
+          
+       }
+       
+    }
+
+    function getHint(hintArr, questionCounter) {
+        $("hint").click(function() {
+            console.log("clicked")
+        for(let i = 0; i < hintArr.length; i++){
+            if(questionCounter === hintArr[i]) {
+                console.log(hintArr[i]);
+            };
+        };    
+        });
+    }
+    
+</script>
+</html>

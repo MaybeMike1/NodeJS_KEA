@@ -4,17 +4,131 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Callback Functions - NodeJS</title>
     <style>
+        article{
+            width: 50%;
+            margin: 5px;
+            width: 50%;
+            height:auto;
+            font-size: 20px;
+        }
         body{
             background-color:cadetblue;
         }
-        img:hover{
+        /* img:hover{
             transform: scale(-1);
+        } */
+        article{
+            width: 45%;
+        }
+        #callbackExample{
+            float: right;
+        }
+        li{
+            font-size: 20px;
+            margin: 5px
+        }
+        div{
+            width: 50%;
+            float: right;
+            height: auto;
         }
     </style>
 </head>
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand mb-0 h1" style="margin-right: -70px" href="/">NodeJS Web</a>
+    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" href="/express">Express</a>
+    <a class="navbar-brand" href="/callback-functions">Callback Functions</a>
+    <a class="navbar-brand" href="/npm">Node Package Manager</a>
+    <a class="navbar-brand" href="/callback-functions">Functions</a>
+    
+    
+  </nav>
 <body>
-    <img href='cbpic.jpg' height="500", width="500" alt="lol">
+    <h1>Callback Functions</h1>
+    <div id="callbackExample"></div>
+    <div id="explanation"></div>
+    <article>
+        <p>
+            Callback Function are a powerful tool for developers to use in JavaScript.
+            It is smart because it's a function that executes something and then executes
+            what's in the callback regardless of logic operation or if else statements.
+            The callback can also be referenced as call later. Many functions in JavaScript
+            such as our GET, POST, DELETE, PATCH and PUT methods from Express takes a callback
+            as an argument when calling the function an object.
+            Object.addEventListener() also takes a callback as an argument, so it might be worth to understand
+            what a callback looks like. When clicking on the button below, you'll see how it can be done.
+        </p>
+        <button onclick="showMessage(explanationCounter)" id="showExample" type="button" class="btn btn-info" >Callback Example</button>
+        <br>
+        <p>
+            As you can see the callback functions are a very useful tool for developers,
+            as it makes it possible to call a function and make the function do something for us.
+            While we don't have to be concern about how we make it do something after or while inside the function body.
+            Therefore I want to make a conclusion about what we have learned about callback functions and what to be aware of.
+        </p>
+        <b>Conclusion: </b>
+        <li>Callbacks can be used in almost every situation, where we find it suitable.</li>
+        <li>Callbacks can take no arguments or more than one arguments as parameter.</li>
+        <li>Callbacks can be refered to as call later, because it's called as the last part of the function.</li>
+        <li>If no condition, then callbacks are always executed.</li>
+        <a href="/">Back to home</a>
+    </article>
+    
+    <!-- <img src="/cbpic.jpg" height="250", width="250" alt="lol"> -->
+    
 </body>
+<script>
+    function showMessage(explanationCounter) {
+            if(explanationCounter === 0) {
+                alert("Click 3 times for explanation - click 5 for removal of the explanation")
+            }
+            
+        }
+
+    let explanationCounter = 0;
+    $("#showExample").click(function() {
+        explanationCounter++;
+        if(explanationCounter === 1) {
+            console.log(explanationCounter)
+            $("#callbackExample").html("<img src='/Callback-example.png'>")
+        }
+        if(explanationCounter === 2) {
+            console.log(explanationCounter)
+            $("#callbackExample").append(
+               "<li> We use app object to call our listen function from Express, that takes a number (Port Number) as standard. " +
+               "Then it takes an error as argument in the callback, here is where it gets interesting. Because when I pass an error " +
+               "in the callback, I can do what ever I want with it. Because it's in the scope of the callbac. I can print the error," + 
+               "if there is any inside of that scope. Though on line 11, I wouldn't be able to do anything with the error</li>"
+               );
+        }
+
+        if(explanationCounter === 3) {
+            console.log(explanationCounter)
+            $("#callbackExample").append(
+            "<li>The next example is a bit like the first one, despite the fact that we take two arguments inside the callback. " + 
+            " We have our responds and request object which we are using to send a response from the serverside to the client."+
+            " In this example we use our response object to send a file, that is the html we want to serve when a client enters 'localhost:8080/'" + 
+            " In this case we are serving the first page the client gets to see, unless he/she knows any other endpoints."+
+            " Then we use the response object again to tell, that a client has entered this endpoint with an status code.</li>")
+        }
+
+        if(explanationCounter === 4) {
+            $("#callbackExample").append("<b>If you wish to remove this explanation, feel free to click again</b>");
+        }
+
+        if(explanationCounter === 5) {
+            console.log(explanationCounter)
+            $("#callbackExample").remove();
+        }
+
+        
+
+    });
+</script>
 </html>

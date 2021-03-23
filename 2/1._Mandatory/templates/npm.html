@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .h1{
@@ -10,19 +13,29 @@
             padding:10px;
             margin-top: auto;
         }
-        .textField{
+        .textField {
             position:absolute;
             width: 50%;
             height:auto;
             font-size: 20px;
             
         }
+        .snippet {
+            margin-left: 80px;
+            margin-top: 40px
+        }
+        .hs{
+            margin-left:85%
+        }
     </style>
     <title>Node Package Manager</title>
 </head>
 <body>
+    
     <h1 class="h1">Node Package Manager - How to use it</h1>
-    <article class="textField">
+    <h2>Explaination: </h2>
+    <h2 class="hs">Snippets:</h2>
+    <div class="textField">
         <p>
             Node Package Manager is what we use to install new packages to support or be used in our applications. It is therefore pretty essential
             to understand. We use npm to install dependencies into our package.json file. For instance, if you want to install nodemon to your project, you would use
@@ -35,6 +48,7 @@
                 in any project on my local machine. The syntax looks as following: "npm install -g nodemon", the -g again specifies that the package manager should install this package
                 globally.
             </li>
+            <div class="snippet" id="snippets"></div>
             <br>
             <li>
                 Install - there is a shorthand for the install command for npm, that can save you a bit of time in rush hours. It is completely alright to use "install"..
@@ -49,7 +63,11 @@
             </li>
         </p>
         <a href="/">Back to home</a>
-    </article>
+    </div>
     
 </body>
+<script>
+    npmSnippetInst = 'npm install -g nodemon';
+    $("#snippets").append("<p>"+ npmSnippetInst +"</p>");
+</script>
 </html>
