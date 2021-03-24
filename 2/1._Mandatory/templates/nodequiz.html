@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <style>
+         body{
+             margin: 8px
+         }
+     </style>
     <title>NodeJS - Quiz</title>
 </head>
 <body>
@@ -14,89 +22,103 @@
     <div>
         <p id="question"></p>
         <input type="text" id="answer">
-        <button id="submit", class="btn-success", type="button">Submit Answer</button>
-        <button id="hint">Hint</button>
+        <button id="submit", type="button" class="btn btn-success">Submit Answer</button>
+        <button id="hint" type="button" class="btn btn-info">Hint</button>
     </div>
+    <div id="hints"></div>
 </body>
 <script>
-    const correctAnswers = ['Package.json', 'ExpressJS', 'npm', 'npm install'];
+    const correctAnswers = ['Package.json', 'ExpressJS', 'npm', 'npm install', 'cd', 'touch', 'npm install nodemon -g', '{}'];
     const quizQuestions = 
-    ['Where is all dependencies stored?',
-     'What module is used for web applications?',
-      'What is the three letters that is used for node commands? ',
-      'What is the command for installation of dependencies in NodeJS?'];
+    [
+    'Where is all dependencies stored?',
+    'What module is used for web applications?',
+    'What is the three letters that is used for node commands? ',
+    'What is the command for installation of dependencies in NodeJS?',
+    'What is the command for changing directory?',
+    'What linux command is used for making a new file?','How do you install nodemon globally?',
+    'How do you make an empty json object?'];
     const quizHints = 
     [
         'It is a json file, that contains certain information about the node project, that you are working on.',
-        'Test'
+        'It starts with E and you can refer to the last as press.',
+        'We use it all the time and its a keyword in terminal for node',
+        'If you are lost here remember what you use to download the packages.',
+        'It is used when you want to enter a new directory, if you are lost. Go to my Command Line Page',
+        'If you put your finger onto something, then you have the answer. Its logic...',
+        'It is the same as question 4, but you have to add something to it. Figure it yourself',
+        'Its simple and if you dont know, your chances of passing this semester is minimal' 
     ];  
     let result = 0;
     
-    let hintCounter = 1;
+    let hintCounter = 0 ;
 
-    let questionCounter = 1;
-    $("h3").html("Question "+ questionCounter+" of 10:");
+    let questionCounter = 0;
 
-    $("#hint").click(function() {
-            console.log("clicked")
-            console.log(questionCounter + " " + hintCounter)
-        for(let i = 0; i < quizHints.length; i++){
-            if(questionCounter === hintCounter) {
-                console.log(quizHints[hintCounter]);
-            };
-        };    
-        });
+    let currentQuestion = 0;
+
+    $("h3").html("Question "+ Number(questionCounter + 1) +" of 8:");
+
+    getHint(questionCounter);
     
     $("#submit").click( function() {
         questionCounter++;
-        $("h3").html(" Question "+questionCounter+" of 10:");
+        $("h3").html(" Question "+ Number(questionCounter + 1) +" of 8:");
         console.log("Called from Submit Botton on question counter")
         
     });
-   
-        let currentQuestion = 0;
-        if(quizQuestions.length >= 4) {
+        
+        if(currentQuestion < 4) {
             let questionHTML = $("#question").html("<p>"+ quizQuestions[currentQuestion] +"</p>")
             console.log(quizQuestions[currentQuestion])
-            /* getHint(quizHints, questionCounter); */
             $("#submit").click( function() {
-                checkAnswer(correctAnswers, result);
+                checkAnswer(correctAnswers);
                 nextQuestion(quizQuestions);
-                
-                 
+                console.log(currentQuestion);
                 
             });
-        };
+        }
     // Arrow Function takes an array of question as argument and gets next question from the array.
     
     nextQuestion = function(questionArr) {
-        currentQuestion++;
+            currentQuestion++;
             questionHTML = $("#question").html("<p>"+quizQuestions[currentQuestion]+"</p>");
+            document.getElementById('answer').value = '';
             console.log(document.getElementById('answer').value);
             console.log("Called from Submit Botton on current question");
+            if(currentQuestion > quizQuestions.length -1) {
+                console.log('Im inside this if statement');
+                getAllResults();
+                currentQuestion--;
+            }
     };
     
-    function checkAnswer(correctAnswers, result) {
+    function checkAnswer(correctAnswers) {
        let submitAnswer = document.getElementById('answer').value;
-       console.log(submitAnswer + " " + correctAnswers[currentQuestion-1] )
-       console.log(submitAnswer === correctAnswers[currentQuestion-1])
-       if(submitAnswer === correctAnswers[currentQuestion-1]){
-        return result += 1;
-        console.log("I'm here");
-          
+       console.log(submitAnswer + " " + correctAnswers[currentQuestion] )
+       console.log(submitAnswer === correctAnswers[currentQuestion])
+       if(submitAnswer === correctAnswers[currentQuestion]){
+        result++;        
        }
        
     }
 
-    function getHint(hintArr, questionCounter) {
-        $("hint").click(function() {
-            console.log("clicked")
-        for(let i = 0; i < hintArr.length; i++){
-            if(questionCounter === hintArr[i]) {
-                console.log(hintArr[i]);
-            };
-        };    
+    function getHint(questionCounter) {
+        $("#hint").click(function() {
+            console.log("clicked");
+            console.log(quizHints[currentQuestion]);
+            $("#hints").html(quizHints[currentQuestion]);    
         });
+    }
+
+    function getAllResults() {
+        console.log('Called');
+        alert('Your result for this quiz is ' + result +' of ' + Number(quizQuestions.length)    +  ' You will be redirected to the front page in 5 seconds');
+        $("#question").remove();
+        $("h3").remove();
+        window.setTimeout(() => {
+            location.href = '/';
+        },5000);
     }
     
 </script>
