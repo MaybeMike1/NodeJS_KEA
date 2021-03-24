@@ -12,12 +12,30 @@
          body{
              margin: 8px
          }
+         button{
+             margin: 5px
+         }
      </style>
     <title>NodeJS - Quiz</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand mb-0 h1" style="margin-right: -70px" href="/">NodeJS Web</a>
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/express">Express</a>
+        <a class="navbar-brand" href="/callback-functions">Callback Functions</a>
+        <a class="navbar-brand" href="/npm">Node Package Manager</a>
+        <a class="navbar-brand" href="/command-line">Command Line</a>
+        <a class="navbar-brand" href="/quiz">Quiz</a>
+        
+        
+      </nav>
+    <button onclick="stopMusic()" type="button" class="btn btn-secondary" style="float: right;">Stop Music</button>
+    <button onclick="startMusic()" type="button" class="btn btn-primary" style="float: right;">Start Music</button>
     <h1>NodeJS Quiz</h1>
+    
     <h3></h3>
+    
 
     <div>
         <p id="question"></p>
@@ -25,9 +43,12 @@
         <button id="submit", type="button" class="btn btn-success">Submit Answer</button>
         <button id="hint" type="button" class="btn btn-info">Hint</button>
     </div>
+    <a href="/">Back to home</a>
     <div id="hints"></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 <script>
+
     const correctAnswers = ['Package.json', 'ExpressJS', 'npm', 'npm install', 'cd', 'touch', 'npm install nodemon -g', '{}'];
     const quizQuestions = 
     [
@@ -121,5 +142,20 @@
         },5000);
     }
     
+    const sound = new Howl({
+        src: ['/LobbyMusic.mp3']
+    });
+
+    setTimeout( () =>{
+        sound.play();
+    });
+    
+   function stopMusic() {
+       sound.pause();
+   }
+
+   function startMusic() {
+       sound.play();
+   }
 </script>
 </html>
