@@ -1,0 +1,28 @@
+{
+  "name": "nodefolio",
+  "version": "0.0.1",
+  "description": "This is a personal portfolio written in Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaybeMike1/NodeJS_KEA.git"
+  },
+  "keywords": [
+    "portfolio",
+    "personal",
+    "website",
+    "kea"
+  ],
+  "author": "MKB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaybeMike1/NodeJS_KEA/issues"
+  },
+  "homepage": "https://github.com/MaybeMike1/NodeJS_KEA#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

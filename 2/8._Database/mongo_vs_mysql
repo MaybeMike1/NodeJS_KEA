@@ -1,0 +1,50 @@
+mysql: table
+mongodb: collection
+[
+    {
+        key: 123
+    },
+    {
+        key: "now as a string"
+        anotherKey: "785"
+    },
+    {}
+]
+
+
+mysql
+----
+great for  data that needs to adhere to a rigid schema, structured data
+great for when the business requirements are not prone to change
+enforces checks of data type etc. an fails on the db level.
+can give uite aa head-ache when trying to split up / shard / scale
+
+mongodb
+-------
+flexible -> rapid prototyping.
+greatt for JavaScript (read Node) application cause you can save JS objects / json directly to MongoDB
+and read it as such.
+it's amazing for sharding / clustering
+beware that it puts a lot of pressure on the developer being good, a lot of things need to happen in
+the application layer.
+It's easy to use but easier to really mess up your data in a big way
+
+
+./mongod --dbpath ./data/db
+
+This can be any folder you want to store db in.
+
+
+Transaction
+START Transaction
+// withdraw money
+
+END Transaction
+
+
+
+Can you combine them? Yes! with polyglot persistence
+
+mysql - for all the business data
+
+mongoDB - forr all the logs

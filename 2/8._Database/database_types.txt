@@ -1,0 +1,39 @@
+Rational Databases
+-----------------
+------------------
+MySQL
+MariaDB
+MsSQL
+PostgreSQL
+SQLite
+Oracle / Mysql Enterprise
+
+In-memory
+---------
+H2
+
+
+NoSQL
+------------------
+------------------
+
+
+Document
+--------
+MongoDB
+RavenDB
+
+
+
+
+Object
+------
+Realm
+
+
+Graph
+-----
+Neo4J
+
+Key/Value
+    Cache-database

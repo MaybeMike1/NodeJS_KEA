@@ -1,0 +1,15 @@
+C
+    insert
+
+R
+    find
+
+U 
+
+
+
+D
+    deleteOne
+    deleteMany
+    remove
+    https://docs.mongodb.com/drivers/node/current/fundamentals/crud/write-operations/delete/

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .container{
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+        padding: 10px;
+      }
+      .selectInfo{
+        width: 250px;
+        height:270px;
+        border: solid black 1px;
+        margin: 5px;
+      }
+      h1{
+        margin:5px
+      }
+      body{
+        background-color: rgb(129, 189, 212);
+      }
+    </style>
+    <title>Homepage - Mandatory</title>
+</head>
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand mb-0 h1" style="margin-right: -70px" href="/">NodeJS Web</a>
+  <a class="navbar-brand" href="/">Home</a>
+  <a class="navbar-brand" href="/express">Express</a>
+  <a class="navbar-brand" href="/callback-functions">Callback Functions</a>
+  <a class="navbar-brand" href="/npm">Node Package Manager</a>
+  <a class="navbar-brand" href="/command-line">Command Line</a>
+  <a class="navbar-brand" href="/quiz">Quiz</a>
+  
+  
+</nav>
+
+<body>
+    <h1>NodeJS - Tools, Documentation and Usage Guide</h1>
+    <p class="selectInfo">
+      Here it is possible to select a topic, that you want to learn more about.
+      By clicking on the different links in the containers, you will be directed
+      to another side where it is possible to read and learn about the different
+      aspects of NodeJS. When you are done with all the reading, you'll be able
+      to take a quiz to see how much you understand about this course.
+    </p>
+    <div class="container px-4">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+          <div class="col">
+            <div class="p-3 border bg-light"><a href="/express">Express - Getting Started with Express</a></div>
+            </div>
+          <div class="col">
+            <div class="p-3 border bg-light"><a href="/callback-functions">Callback Functions</a></div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light"><a href="/npm">Node Package Manager</a></div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light"><a href="/command-line">Linux and NPM Commands</a></div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light"><a href="/quiz">Quiz - feel free to try when you are ready.</a></div>
+          </div>
+        </div>
+      </div>
+    <p>This application is created for learning purposes.</p>
+    <a href="/">Back to home</a>
+</body>
+</html>
