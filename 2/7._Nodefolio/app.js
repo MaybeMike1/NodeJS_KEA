@@ -42,4 +42,9 @@ app.get('/projects', (req,res) => {
     
 });
 
-app.listen(8080);
+app.listen(8080 || process.env.PORT, (error) => {
+    if(error) {
+        console.log(error);
+    }
+    console.log("The server is running on". server.address().port);
+});
