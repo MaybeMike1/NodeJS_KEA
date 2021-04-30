@@ -8,7 +8,7 @@ app.use(express.json());
 //app.use("/static", express.static('./static/'));
 
 app.get("/", (req,res) =>{
-    res.sendFile( __dirname + "/index.html" );
+    res.sendFile(__dirname + "/index.html" );
 });
 
 //Get a list of users finished.
