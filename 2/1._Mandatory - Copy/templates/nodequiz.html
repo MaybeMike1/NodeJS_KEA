@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <style>
+         body{
+             margin: 8px
+         }
+         button{
+             margin: 5px
+         }
+     </style>
+    <title>NodeJS - Quiz</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand mb-0 h1" style="margin-right: -70px" href="/">NodeJS Web</a>
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/express">Express</a>
+        <a class="navbar-brand" href="/callback-functions">Callback Functions</a>
+        <a class="navbar-brand" href="/npm">Node Package Manager</a>
+        <a class="navbar-brand" href="/command-line">Command Line</a>
+        <a class="navbar-brand" href="/quiz">Quiz</a>
+        
+        
+      </nav>
+    <button onclick="stopMusic()" type="button" class="btn btn-secondary" style="float: right;">Stop Music</button>
+    <button onclick="startMusic()" type="button" class="btn btn-primary" style="float: right;">Start Music</button>
+    <h1>NodeJS Quiz</h1>
+    
+    <h3></h3>
+    
+
+    <div>
+        <p id="question"></p>
+        <input type="text" id="answer">
+        <button id="submit", type="button" class="btn btn-success">Submit Answer</button>
+        <button id="hint" type="button" class="btn btn-info">Hint</button>
+    </div>
+    <a href="/">Back to home</a>
+    <div id="hints"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+<script>
+
+    const correctAnswers = ['Package.json', 'ExpressJS', 'npm', 'npm install', 'cd', 'touch', 'npm install nodemon -g', '{}'];
+    const quizQuestions = 
+    [
+    'Where is all dependencies stored?',
+    'What module is used for web applications?',
+    'What is the three letters that is used for node commands? ',
+    'What is the command for installation of dependencies in NodeJS?',
+    'What is the command for changing directory?',
+    'What linux command is used for making a new file?','How do you install nodemon globally?',
+    'How do you make an empty json object?'];
+    const quizHints = 
+    [
+        'It is a json file, that contains certain information about the node project, that you are working on.',
+        'It starts with E and you can refer to the last as press.',
+        'We use it all the time and its a keyword in terminal for node',
+        'If you are lost here remember what you use to download the packages.',
+        'It is used when you want to enter a new directory, if you are lost. Go to my Command Line Page',
+        'If you put your finger onto something, then you have the answer. Its logic...',
+        'It is the same as question 4, but you have to add something to it. Figure it yourself',
+        'Its simple and if you dont know, your chances of passing this semester is minimal' 
+    ];  
+    let result = 0;
+    
+    let hintCounter = 0 ;
+
+    let questionCounter = 0;
+
+    let currentQuestion = 0;
+
+    $("h3").html("Question "+ Number(questionCounter + 1) +" of 8:");
+
+    getHint(questionCounter);
+    
+    $("#submit").click( function() {
+        questionCounter++;
+        $("h3").html(" Question "+ Number(questionCounter + 1) +" of 8:");
+        console.log("Called from Submit Botton on question counter")
+        
+    });
+        
+        if(currentQuestion < 4) {
+            let questionHTML = $("#question").html("<p>"+ quizQuestions[currentQuestion] +"</p>")
+            console.log(quizQuestions[currentQuestion])
+            $("#submit").click( function() {
+                checkAnswer(correctAnswers);
+                nextQuestion(quizQuestions);
+                console.log(currentQuestion);
+                
+            });
+        }
+    // Arrow Function takes an array of question as argument and gets next question from the array.
+    
+    nextQuestion = function(questionArr) {
+            currentQuestion++;
+            questionHTML = $("#question").html("<p>"+quizQuestions[currentQuestion]+"</p>");
+            document.getElementById('answer').value = '';
+            console.log(document.getElementById('answer').value);
+            console.log("Called from Submit Botton on current question");
+            if(currentQuestion > quizQuestions.length -1) {
+                console.log('Im inside this if statement');
+                getAllResults();
+                currentQuestion--;
+            }
+    };
+    
+    function checkAnswer(correctAnswers) {
+       let submitAnswer = document.getElementById('answer').value;
+       console.log(submitAnswer + " " + correctAnswers[currentQuestion] )
+       console.log(submitAnswer === correctAnswers[currentQuestion])
+       if(submitAnswer === correctAnswers[currentQuestion]){
+        result++;        
+       }
+       
+    }
+
+    function getHint(questionCounter) {
+        $("#hint").click(function() {
+            console.log("clicked");
+            console.log(quizHints[currentQuestion]);
+            $("#hints").html(quizHints[currentQuestion]);    
+        });
+    }
+
+    function getAllResults() {
+        console.log('Called');
+        alert('Your result for this quiz is ' + result +' of ' + Number(quizQuestions.length)    +  ' You will be redirected to the front page in 5 seconds');
+        $("#question").remove();
+        $("h3").remove();
+        window.setTimeout(() => {
+            location.href = '/';
+        },5000);
+    }
+    
+    const sound = new Howl({
+        src: ['/LobbyMusic.mp3']
+    });
+
+    setTimeout( () =>{
+        sound.play();
+    });
+    
+   function stopMusic() {
+       sound.pause();
+   }
+
+   function startMusic() {
+       sound.play();
+   }
+</script>
+</html>

@@ -1,0 +1,40 @@
+#portrait{
+    margin : 5px;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+}
+div{
+    margin: 5px
+}
+
+.skillsSets p{
+    font-size: 20px
+}
+
+.skillsSets{
+    font-size: 30px;
+    text-align: center;
+    
+   
+}
+.w3-card-4{
+    width: 505px;
+    text-align: center;
+}
+.greetings{
+    float: right;
+    margin: 5px;
+
+}
+
+.projects{
+    font-size: 20px;
+    text-align: center;
+ 
+}
+
+h1{
+    text-align: center;
+}

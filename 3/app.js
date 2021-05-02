@@ -24,6 +24,13 @@ app.get("/month", (req, res) => {
     res.send({"Month: " : monthsInString[date.getUTCMonth()]})
 })
 
+app.get("/about", (req,res) => {
+    res.send({"version: " : "1"});
+});
+
+app.get("/page", (req,res) => {
+    res.send("<h1>Welcome</h1>");
+});
 
 
 app.listen(8080);
