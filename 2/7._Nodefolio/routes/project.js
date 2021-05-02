@@ -11,3 +11,8 @@ const projects = [{
     endDate: new Date("2021-05-08"),
     gitLink: ""
 }]
+
+
+module.exports = {
+    router
+}

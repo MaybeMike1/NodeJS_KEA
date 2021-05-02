@@ -4,6 +4,14 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+
+const contactRouter = require("./routes/contact.js");
+const projectRouter = require("./routes/project.js");
+
+
+app.use(contactRouter.router);
+app.use(projectRouter.router);
 
 const fs = require('fs');
 
