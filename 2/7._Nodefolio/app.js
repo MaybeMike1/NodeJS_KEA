@@ -16,30 +16,38 @@ console.log(header)
 console.log(footer);
 
 app.get('/', (req, res) => {
-    try{
+    try {
         res.send(header + frontpage +  footer); 
-    }catch(error){
+    }catch (error){
        console.log('Error : ' + error.toString()); 
     }
     
 });
 
 app.get('/about', (req,res) => {
-    try{
+    try {
         res.send(header + footer);
-    }catch(error) {
-        console.log('Error: ' + error.toString + 'Status Code: ' + res.statusCode)
+    } catch (error) {
+        console.log('Error: ' + error.toString + 'Status Code: ' + res.statusCode);
     }
     
 });
 
 app.get('/projects', (req,res) => {
-    try{
-        res.send(header + footer)
-    }catch(error) {
+    try {
+        res.send(header + footer);
+    }catch (error) {
         console.log('Error: ' + error.toString());
     }
     
+});
+
+app.get('/skills', (req, res) => {
+    try{
+        res.send(header + footer);
+    }catch(error) {
+        console.log('Error: ', error.toString());
+    }
 });
 
 app.listen(8080 || process.env.PORT, (error) => {
@@ -48,3 +56,4 @@ app.listen(8080 || process.env.PORT, (error) => {
     }
     console.log("The server is running on");
 });
+
