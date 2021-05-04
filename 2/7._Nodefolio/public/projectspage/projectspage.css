@@ -14,3 +14,8 @@ nav a{
 #main-content{
     min-height: calc(100vh - 120px);
 }
+
+img{
+    justify-content: center;
+    display: flex;
+}

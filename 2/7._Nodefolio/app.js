@@ -19,9 +19,12 @@ const header = fs.readFileSync(__dirname + "/public/header/header.html", "utf-8"
 const footer = fs.readFileSync(__dirname + "/public/footer/footer.html","utf-8");
 
 const frontpage = fs.readFileSync(__dirname + "/public/frontpage/frontpage.html", "utf-8");
+const contactPage = fs.readFileSync(__dirname + "/public/contactme/contact-me.html", "utf-8");
+const projectPage = fs.readFileSync(__dirname + "/public/projectspage/projectspage.html", "utf-8");
+const skillsPage = fs.readFileSync(__dirname + "/public/skillspage/skillspage.html", "utf-8");
 
-console.log(header)
-console.log(footer);
+/* console.log(header)
+console.log(footer); */
 
 app.get('/', (req, res) => {
     try {
@@ -32,9 +35,9 @@ app.get('/', (req, res) => {
     
 });
 
-app.get('/about', (req,res) => {
+app.get('/contact', (req,res) => {
     try {
-        res.send(header + footer);
+        res.send(header + contactPage +footer);
     } catch (error) {
         console.log('Error: ' + error.toString + 'Status Code: ' + res.statusCode);
     }
@@ -43,7 +46,7 @@ app.get('/about', (req,res) => {
 
 app.get('/projects', (req,res) => {
     try {
-        res.send(header + footer);
+        res.send(header + projectPage + footer);
     }catch (error) {
         console.log('Error: ' + error.toString());
     }
@@ -52,16 +55,40 @@ app.get('/projects', (req,res) => {
 
 app.get('/skills', (req, res) => {
     try{
-        res.send(header + footer);
+        res.send(header + skillsPage +  footer);
     }catch(error) {
         console.log('Error: ', error.toString());
     }
 });
 
-app.listen(8080 || process.env.PORT, (error) => {
+app.get('/contact', (req, res) => {
+    try{
+        res.send(header + contactPage + footer);
+    }catch{
+
+    }
+})
+
+app.get('/education', (req, res) => {
+    try{
+        res.send(header + footer);
+    }catch{
+
+    }
+});
+
+app.get('/recommendation', (req, res) => {
+    try{
+        res.send(header + footer);
+    }catch{
+
+    }
+});
+
+const server = app.listen(8080 || process.env.PORT, (error) => {
     if(error) {
         console.log(error);
     }
-    console.log("The server is running on");
+    console.log("The server is running on", server.address().port);
 });
 
