@@ -41,6 +41,6 @@ console.log("File from recommendation folder");
    
 
         recommendationsDiv.appendChild(recommendationDiv);
-        
+        //
     });
 })();
