@@ -3,9 +3,6 @@ const express = require('express');
 
 const app = express();
 
-
-
-
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
@@ -14,12 +11,13 @@ const contactRouter = require("./routes/contact.js");
 const projectRouter = require("./routes/project.js");
 const educationRouter = require("./routes/education.js");
 const skillsRouter = require("./routes/skills.js");
-
+const recommendationRouter = require("./routes/recommendation.js");
 
 app.use(contactRouter.router);
 app.use(projectRouter.router);
 app.use(educationRouter.router);
 app.use(skillsRouter.router);
+app.use(recommendationRouter.router);
 
 const fs = require('fs');
 
@@ -31,14 +29,12 @@ const contactPage = fs.readFileSync(__dirname + "/public/contactme/contact-me.ht
 const projectPage = fs.readFileSync(__dirname + "/public/projectspage/projectspage.html", "utf-8");
 const skillsPage = fs.readFileSync(__dirname + "/public/skillspage/skillspage.html", "utf-8");
 const educationPage = fs.readFileSync(__dirname + "/public/education/education.html", "utf-8");
-
-/* console.log(header)
-console.log(footer); */
+const recommendationPage = fs.readFileSync(__dirname + "/public/recommendationPage/recommendationPage.html", "utf-8");
 
 app.get('/', (req, res) => {
     try {
         res.send(header + frontpage +  footer); 
-    }catch (error){
+    } catch (error) {
        console.log('Error : ' + error.toString()); 
     }
     
@@ -56,16 +52,16 @@ app.get('/contact', (req,res) => {
 app.get('/projects', (req,res) => {
     try {
         res.send(header + projectPage + footer);
-    }catch (error) {
+    } catch (error) {
         console.log('Error: ' + error.toString());
     }
     
 });
 
 app.get('/skills', (req, res) => {
-    try{
+    try {
         res.send(header + skillsPage +  footer);
-    }catch(error) {
+    } catch (error) {
         console.log('Error: ', error.toString());
     }
 });
@@ -73,24 +69,24 @@ app.get('/skills', (req, res) => {
 app.get('/contact', (req, res) => {
     try{
         res.send(header + contactPage + footer);
-    }catch{
-
+    }catch {
+            console.log("Error: ", error.toString());
     }
 })
 
 app.get('/education', (req, res) => {
     try{
         res.send(header + educationPage +  footer);
-    }catch{
-
+    }catch (error) {
+        console.log("Error: ", error.toString());
     }
 });
 
 app.get('/recommendation', (req, res) => {
-    try{
-        res.send(header + footer);
-    }catch{
-
+    try {
+        res.send(header + recommendationPage +  footer);
+    }catch (error) {
+        console.log("Error: ", error.toString());
     }
 });
 

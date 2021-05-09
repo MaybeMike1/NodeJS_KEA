@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-</head>
 <body>
-<form action="/api/contact" method="POST">
-    <b>Email Me</b>
-    <table>
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" placeholder="Your name" name="fullname" required></td>
-            <td>Company:</td>
-            <td><input type="text" placeholder="Your Company" name="companyName" required></td>
-        </tr>
-        <tr>
-            <td>Email Address:</td>
-            <td><input type="text" placeholder="Your email" name="emailAddress" required></td>
-            <td>Phone Number:</td>
-            <td><input type="text" placeholder="Your email" name="phoneNumber"></td>
-        </tr>
-        
-    </table>
-    <td>Message:</td>
-    <textarea placeholder="Your Message" name="message" cols="60" rows="8" required></textarea>
-    <tr>
-        <td><button type="submit" class="btn btn-success">Send Mail</button></td>
-    </tr>
-</form>   
-    
+    <div id="main-content">
+        <form action="/api/contact" method="POST">
+            <b>Email Me</b>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" placeholder="Your name" name="fullname" required></td>
+                    <td>Company:</td>
+                    <td><input type="text" placeholder="Your Company" name="companyName" required></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" placeholder="Your email" name="emailAddress" required></td>
+                    <td>Phone Number:</td>
+                    <td><input type="text" placeholder="Your email" name="phoneNumber"></td>
+                </tr>
+                
+            </table>
+            <td>Message:</td>
+            <textarea placeholder="Your Message" name="message" cols="60" rows="8" required></textarea>
+            <tr>
+                <td><button type="submit" class="btn btn-success">Send Mail</button></td>
+            </tr>
+        </form>            
+    </div>
+
 </body>
 <script src="/contactme/contact-me.js"></script>
-</html>

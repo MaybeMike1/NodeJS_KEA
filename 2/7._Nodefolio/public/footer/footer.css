@@ -62,11 +62,6 @@
 	top: 0%;
 }
 
-.twitter {
-	background: #1a9ec4;
-	bottom: 0;
-	left: 25%;
-}
 
 .dribbble {
 	background: #d05f8f;
@@ -74,13 +69,9 @@
 	top: 0%;
 }
 
-.behance {
-	background: #3f7aa3;
-	bottom: 0;
-	left: 75%;
-}
 
 .linked-in {
 	background: #157f9d;
 	left: 100%;
 }
+

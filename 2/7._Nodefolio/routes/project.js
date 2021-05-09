@@ -1,9 +1,5 @@
 const router = require('express').Router();
 
-/* 
-
-*/
-
 const projects = [{
     title : "Nodefolio",
     description: "Personal portfolio implemented in Node.js",
@@ -31,8 +27,8 @@ const projects = [{
 }];
 
 router.get("/api/projects", (req, res) => {
-    res.send({ projects })
-})
+    res.send({ projects });
+});
 
 
 module.exports = {

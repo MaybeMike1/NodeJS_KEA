@@ -1,0 +1,11 @@
+img {
+    width:500px;
+}
+
+#recommendations {
+    text-align: center;
+}
+
+#recommendation img {
+    padding: 10px
+}

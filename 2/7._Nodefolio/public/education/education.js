@@ -1,19 +1,5 @@
-/* let today = new Date();
-let currentYear = today.getFullYear();
-console.log(currentYear);
+console.log("File from education folder");
 
-document.getElementById('footer-copyright').innerText = "Copyright  © " + currentYear;
- */
-console.log("File from projects folder")
-
-
-/* const projects = fetch('http://localhost:8080/api/projects')
-  .then(response => response.json())
-  .then(json => document.getElementById("projects").append(JSON.stringify(json)))
-  .then(); */
-
-
-  console.log('hello there');
 (async function getEducations(){
     const response = await fetch("/api/education");
     const result = await response.json();
@@ -25,11 +11,11 @@ console.log("File from projects folder")
  
         const educationTitle = document.createElement("h3");
         educationTitle.classList.add("education-title");
-        educationTitle.innerText = "School Name: " + education.title
+        educationTitle.innerText = "School Name: " + education.title;
  
         const educationDescription = document.createElement("p");
         educationDescription.classList.add("project-description");
-        educationDescription.innerText = "Description : " + education.description
+        educationDescription.innerText = "Description : " + education.description;
  
  
         const educationStartDate = document.createElement("p");
@@ -54,6 +40,7 @@ console.log("File from projects folder")
         educationDiv.appendChild(educationEndDate)
         educationDiv.appendChild(educationSubject);
         educationDiv.appendChild(educationSchool);
+
         educationsDiv.appendChild(educationDiv);
         
     });

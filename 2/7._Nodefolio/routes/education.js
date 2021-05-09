@@ -1,9 +1,5 @@
 const router = require('express').Router();
 
-/* 
-
-*/
-
 const educations = [{
     title : "Toftevang Skolen",
     description: "10 years of primary school",
@@ -29,9 +25,9 @@ const educations = [{
 
 router.get("/api/education", (req, res) => {
     res.send({ educations });
-})
+});
 
 
 module.exports = {
     router
-}
+};
