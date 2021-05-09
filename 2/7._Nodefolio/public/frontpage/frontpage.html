@@ -1,38 +1,109 @@
 <h1>Welcome to Michael's Nodefolio - A developer to remember</h1>
-<div class="w3-card-4">
-    <img src="assets/IMG_5725.jpg" id="portrait">
-    <div class="w3-container w3-center">
+<!-- <div class="w3-card-4">
+    
+    <div class="w3-container">
       <p>Name: Michael Berko</p>
       <p>Age: 23</p>
     </div>
-  </div>
+  </div> -->
   
   <!-- <div class="jumbotron">
     <img src="assets/IMG_5725.jpg" id="portrait">
   </div> -->
+  <!-- <div>
+    <img src="assets/IMG_5725.jpg" id="portrait">
+    <p id="about">testsetsetsetsets</p>
+  </div> -->
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="assets/IMG_5725.jpg" id="portrait">
+        <div class="containerInfo">
+          <h2>Michael Berko</h2>
+          <p class="title">Software Developer</p>
+          <p>I enjoy working with new technologies and using my knowlegde to help other with their problems.</p>
+          <p>Michaelberko3@gmail.com</p>
+          <p><a href="/contact"><button type="button" class="btn btn-info">Contact</button></a></p>
+        </div>
+      </div>
+<!-- 
+      <label for="topics">Choose a topic:</label>
+      <select id="selected">
+        <option value="skills">Skills</option>
+        <option value="projects">Projects</option>
+        <option value="langauges">Languages</option>
+        <option value="recommendation">Recommendations</option>
+      </select>
+      <button id="outputButton">Change Topic</button>
 
+      <div id="output"></div> -->
 
-<div class="skillsSets">
-    <b>Programming Languages:</b>
-    <p>Java</p>
-    <p>JavaScript</p>
-    <p>Python</p>
-    <p>MySQL - Workbench</p>
-    <b>Frameworks:</b>
-    <p>Java Spring Boot MVC</p>
-    <p>NodeJS</p>
-    <p>ExpressJS</p>
-    <b>Technologies:</b>
-    <p>Amazon Web Services</p>
-    <p>Heroku</p>
-    <p>Jenkins CI/CD Pipeline</p>
-</div>
-<div class="projects">
-    <b>Here is where I pst all my projects etc.</b>
-      <b>First year project in Java Spring Boot</b>
-      <p>Nordic Motorhome Rental - Java Spring Boot MVC</p>
-    
-</div>
-<div class="recommendations">
-    <b>Here is where I pst all the recommandations I have gotten</b>
-</div>
+      <div class="row">
+        <div class="column" style="background-color:lightgray;">
+          <h2 class="fieldHeader">Programming Languages</h2>
+          <div class="techName">
+            <p>Java - Object Oriented Programming</p>
+            <p>JavaScript - NodeJS</p>
+            <p>Python - Functional Programming</p>
+            <p>MySQL - Databases</p>
+          </div>
+          <div class="techDesc">
+            <p>Building Java Programs and Fundementals - Experience with different <br> datastructures and algorithmes.</p>
+            <p>Understanding how JavaScript works and implementing NodeJS and ExpressJS<br> to run applications and libraries.</p>
+            <p>Understanding how strong Python is, and how to implement small features from Python<br> in other applications.</p>
+            <p>Experience with rational database and how to create a new database based<br> on the normalization rules.</p>
+          </div>
+        </div>
+        <div class="column" style="background-color:lightgray;">
+          <h2 class="fieldHeader" >Skills</h2>
+          <div class="techName">
+            <p>Communication</p>
+            <p>Customer Service</p>
+            <p>JQuery</p>
+            <p>DevOps Tools</p>
+            <p>Java Spring Boot MVC</p>
+            <p>NodeJS</p>
+            <p>ExpressJS - </p>
+          </div>
+          <div class="techDesc">
+            <p>Understanding the principle of basic communication and know in order to  communicate.<br> There is a need to be a good listener and being able to understand the requirement.</p>
+            <p>Understanding what the customer need in order to provide good customer service,<br> that gives value to the customer.</p>
+            <p>JavaScript Library, that provide better user experience and can also help with restful api.</p>
+            <p>Deploying projects with AWS, Heroku. Famillar with using Ubuntu and Linux subsystems.</p>
+            <p>Experience with setting up a Spring Boot enviroment with Model, View and Controller. <br> Also with JDBC driver and JPA to get data from a rational database.</p>
+            <p>Understanding how to use Node with JavaScript and how to install dependencies into my projects, <br> that helps me with archiving the need for the project.</p>
+            <!-- <a href="/skills" style="float: right; padding: 10px">Check the skills Page</a> -->
+          </div>
+        </div>
+        <div class="column" style="background-color:lightgray;">
+          <h2 class="fieldHeader">Technologies</h2>
+          <div class="techName">
+            <p>Amazon Web Services</p>
+            <p>Heroku - Free Deployment Service</p>
+            <p>Jenkins CI/CD Pipeline</p>
+          </div>
+          <div class="techDesc">
+            <p>Experience with EC2-instances, RDS-instance and deployment with various projects.</p>
+            <p>Experience with deploying Java and NodeJS projects with GitHub and Heroku CI/CD.</p>
+            <p>Experience with deploying Java Applications with Jenkins and implementing CI/CD </p>
+          </div>
+        </div>
+        <div class="column" style="background-color:lightgray;">
+          <h2 class="fieldHeader" >Projects</h2>
+          <div class="techName">
+          <p>First year project in Java Spring Boot</p>
+          
+          <p>Mandatory Project - Second Semester</p>
+          
+          <p>Third Semester - Software Development Project</p>
+         
+          </div>
+          <div class="techDesc">
+            <p>Nordic Motorhome Rental - Java Spring Boot MVC</p>
+            <p>Kailua Car Rental - Java Spring Boot MVC</p>
+            <p>Lærkegården Vinbutik - Java Spring Boot MVC & JPA</p>
+          </div>
+        </div>
+      </div>
+      
+<script src="/frontpage/frontpage.js"></script>

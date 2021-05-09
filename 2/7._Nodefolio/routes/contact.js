@@ -2,11 +2,19 @@ const router = require('express').Router();
 
 const nodemailer = require("nodemailer");
 
+
+
+require("dotenv").config();
+const userName = process.env.USEREMAIL;
+
+const password = process.env.PASSWORD;
+
+
 let transporter = nodemailer.createTransport({
    service: 'gmail',
    auth: {
-       user: '',
-       pass: ""
+       user: userName,
+       pass: password
    }
 
 });
@@ -16,8 +24,8 @@ let transporter = nodemailer.createTransport({
 router.post("/api/contact", (req, res) => {
     console.log(req.body);
     let mailDetails = {
-        from: 'michaelberko3@gmail.com',
-        to: req.body.emailAddress,
+        from: `${req.body.fullname} <BusinessBerko2@gmail.com>`,
+        to: "Michaelberko3@gmail.com",
         subject: "Company " + req.body.companyName + " was to get in touch",
         text: req.body.message
     

@@ -1,14 +1,19 @@
 #portrait{
     margin : 5px;
     width: 500px;
-    height: 500px;
-    justify-content: center;
-    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-right: auto; */
 }
 div{
     margin: 5px
 }
 
+#about {
+    float:right;
+    
+}
 .skillsSets p{
     font-size: 20px
 }
@@ -19,10 +24,16 @@ div{
     
    
 }
+
+.containerInfo {
+    text-align: center;
+}
 .w3-card-4{
     width: 505px;
     text-align: center;
 }
+
+
 .greetings{
     float: right;
     margin: 5px;
@@ -37,4 +48,34 @@ div{
 
 h1{
     text-align: center;
+}
+
+.techName {
+    float: left;
+    
+}
+
+.techName p {
+    margin: 20px;
+}
+
+.techDesc {
+    float: right;
+    margin-right: 5%;
+}
+
+.techDesc p {
+    margin: 20px;
+}
+
+
+.row {
+    padding: 15px;
+    padding-left: 10px;
+    
+}
+
+.fieldHeader {
+    text-align: center;
+    margin: 10px;
 }

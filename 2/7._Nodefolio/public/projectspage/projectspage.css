@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: pink;
 }
 nav{
@@ -18,4 +18,9 @@ nav a{
 img{
     justify-content: center;
     display: flex;
+} */
+
+
+#projects{
+    text-align: center;
 }
