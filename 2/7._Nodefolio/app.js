@@ -90,7 +90,7 @@ app.get('/recommendation', (req, res) => {
     }
 });
 
-const server = app.listen(8080 || process.env.PORT, (error) => {
+const server = app.listen(80 || process.env.PORT, (error) => {
     if(error) {
         console.log(error);
     }
